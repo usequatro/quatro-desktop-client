@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-var packageJson = require('./package.json');
+var packageJson = require('../package.json');
 
 module.exports = {
   mode: 'production',

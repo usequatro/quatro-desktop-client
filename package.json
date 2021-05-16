@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-injected-scripts": "webpack",
+    "build-injected-scripts": "webpack --config injected-scripts/webpack.config.js",
     "build-mac": "node ./index.js --platform=mac",
     "build-windows": "node ./index.js --platform=windows",
     "build-linux": "node ./index.js --platform=linux",
