@@ -12,12 +12,12 @@ if (!allowedPlatforms.includes(platform)) {
   throw new Error(`Invalid platform value. Allowed values: ${allowedPlatforms.join(', ')}`);
 }
 
-// @link https://github.com/nativefier/nativefier/blob/master/docs/api.md#programmatic-api
+// @link https://github.com/nativefier/nativefier/blob/master/API.md#programmatic-api
 var options = {
   name: 'Quatro', // will be inferred if not specified
   // targetUrl: 'https://app.usequatro.com',
-  // targetUrl: 'https://dev.usequatro.com',
-  targetUrl: 'http://localhost:3000',
+  targetUrl: 'https://dev.usequatro.com',
+  // targetUrl: 'http://localhost:3000',
   out: './build',
   platform,
   //   icon: '~/Desktop/icon.png', // NEEDS TO BE SPECIFIED PER PLATFORM
@@ -30,6 +30,10 @@ var options = {
   fileDownloadOptions: {
     saveAs: true, // always show "Save As" dialog
   },
+  // internalUrls: '.*?',
+  // We lie about the user agent so that Google Auth works.
+  // @link https://github.com/nativefier/nativefier/issues/831
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefox/88.0',
 };
 
 function getPlatform(argv) {
