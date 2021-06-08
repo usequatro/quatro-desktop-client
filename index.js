@@ -16,8 +16,8 @@ if (!allowedPlatforms.includes(platform)) {
 var options = {
   name: 'Quatro', // will be inferred if not specified
   // targetUrl: 'https://app.usequatro.com',
-  targetUrl: 'https://dev.usequatro.com',
-  // targetUrl: 'http://localhost:3000',
+  // targetUrl: 'https://dev.usequatro.com',
+  targetUrl: 'http://localhost:3000',
   out: './build',
   platform,
   //   icon: '~/Desktop/icon.png', // NEEDS TO BE SPECIFIED PER PLATFORM
@@ -34,6 +34,8 @@ var options = {
   // We lie about the user agent so that Google Auth works.
   // @link https://github.com/nativefier/nativefier/issues/831
   userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefox/88.0',
+  // @link https://github.com/google/google-api-javascript-client/issues/506
+  browserwindowOptions: { webPreferences: { nativeWindowOpen: true } },
 };
 
 function getPlatform(argv) {
