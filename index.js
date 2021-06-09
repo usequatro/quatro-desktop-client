@@ -12,6 +12,9 @@ if (!allowedPlatforms.includes(platform)) {
   throw new Error(`Invalid platform value. Allowed values: ${allowedPlatforms.join(', ')}`);
 }
 
+// @link https://github.com/nativefier/nativefier/blob/master/API.md#icon
+const icon = platform === 'windows' ? './assets/icon.ico' : './assets/icon.png';
+
 // @link https://github.com/nativefier/nativefier/blob/master/API.md#programmatic-api
 var options = {
   name: 'Quatro', // will be inferred if not specified
@@ -20,7 +23,7 @@ var options = {
   targetUrl: 'http://localhost:3000',
   out: './build',
   platform,
-  //   icon: '~/Desktop/icon.png', // NEEDS TO BE SPECIFIED PER PLATFORM
+  icon,
   width: 1280,
   height: 800,
   showMenuBar: false,
@@ -50,6 +53,7 @@ function getPlatform(argv) {
 nativefier
   .buildNativefierApp(options)
   .then((appPath) => {
+    console.log(options);
     console.log('App has been nativefied to', appPath);
   })
   .catch((error) => {
