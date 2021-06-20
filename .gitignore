@@ -1,5 +1,6 @@
 node_modules
 build
+SfxPackages
 
 .vscode
 .DS_Store

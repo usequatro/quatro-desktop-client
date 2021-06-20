@@ -19,8 +19,8 @@ const icon = platform === 'windows' ? './assets/icon.ico' : './assets/icon.png';
 var options = {
   name: 'Quatro', // will be inferred if not specified
   // targetUrl: 'https://app.usequatro.com',
-  // targetUrl: 'https://dev.usequatro.com',
-  targetUrl: 'http://localhost:3000',
+  targetUrl: 'https://dev.usequatro.com',
+  // targetUrl: 'http://localhost:3000',
   out: './build',
   platform,
   icon,
@@ -53,7 +53,6 @@ function getPlatform(argv) {
 nativefier
   .buildNativefierApp(options)
   .then((appPath) => {
-    console.log(options);
     console.log('App has been nativefied to', appPath);
   })
   .catch((error) => {
