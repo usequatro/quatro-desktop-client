@@ -10,7 +10,9 @@
     "build-mac": "node ./index.js --platform=mac",
     "build-windows": "node ./index.js --platform=windows",
     "build-linux": "node ./index.js --platform=linux",
-    "build": "npm run build-injected-scripts && npm run build-mac && npm run build-windows"
+    "build": "npm run build-injected-scripts && npm run build-mac && npm run build-windows",
+    "package": "node ./createSfxPackages.mjs",
+    "dist": "npm run build && npm run package"
   },
   "repository": {
     "type": "git",
