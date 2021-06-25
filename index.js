@@ -48,7 +48,16 @@ var options = {
   fileDownloadOptions: {
     saveAs: true, // always show "Save As" dialog
   },
-  // internalUrls: '.*?',
+  // internalUrls value is parsed through RegExp constructor
+  // @link https://github.com/nativefier/nativefier/blob/8b34c6d12da7979a8e6973cb74284cc6db8c34d2/app/src/helpers/helpers.ts#L114
+  internalUrls: [
+    // SSO with OneLogin
+    '[^/]*?.onelogin.com/*?',
+    // Google Assertion Consumer Service (part of SSO SAML)
+    'www.google.com/a/[^/]+/acs',
+  ]
+    .map((value) => `(${value})`)
+    .join('|'),
   // We lie about the user agent so that Google Auth works.
   // @link https://github.com/nativefier/nativefier/issues/831
   userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:88.0) Gecko/20100101 Firefox/88.0',
