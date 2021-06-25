@@ -2,25 +2,40 @@ var nativefier = require('nativefier');
 
 // @link https://github.com/nativefier/nativefier/blob/master/docs/api.md#platform
 const allowedPlatforms = ['mac', 'windows', 'linux'];
+const allowedEnvironments = ['production', 'development', 'local'];
 
 const platform = getPlatform(process.argv);
+const environment = getEnvironment(process.argv);
 
-if (!platform) {
-  throw new Error(`No platform specified. Use --platform=mac to specify`);
-}
-if (!allowedPlatforms.includes(platform)) {
+if (allowedPlatforms.includes(platform)) {
+  console.log(`➡ Using platform ${platform}`);
+} else {
   throw new Error(`Invalid platform value. Allowed values: ${allowedPlatforms.join(', ')}`);
+}
+if (allowedEnvironments.includes(environment)) {
+  console.log(`➡ Using environment ${environment}`);
+} else {
+  throw new Error(`Invalid environment value. Allowed values: ${allowedEnvironments.join(', ')}`);
 }
 
 // @link https://github.com/nativefier/nativefier/blob/master/API.md#icon
 const icon = platform === 'windows' ? './assets/icon.ico' : './assets/icon.png';
 
+const targetUrls = {
+  [allowedEnvironments[0]]: 'https://app.usequatro.com',
+  [allowedEnvironments[1]]: 'https://dev.usequatro.com',
+  [allowedEnvironments[2]]: 'http://localhost:3000',
+};
+const targetUrl =
+  targetUrls[environment] ||
+  (() => {
+    throw new Error('No targetUrl');
+  })();
+
 // @link https://github.com/nativefier/nativefier/blob/master/API.md#programmatic-api
 var options = {
   name: 'Quatro', // will be inferred if not specified
-  // targetUrl: 'https://app.usequatro.com',
-  // targetUrl: 'https://dev.usequatro.com',
-  targetUrl: 'http://localhost:3000',
+  targetUrl,
   out: './build',
   platform,
   icon,
@@ -44,6 +59,15 @@ var options = {
 function getPlatform(argv) {
   for (const argument of argv) {
     const result = (argument || '').match(/--platform=([a-z0-9]+)/i);
+    if (result && result[1]) {
+      return result[1];
+    }
+  }
+}
+
+function getEnvironment(argv) {
+  for (const argument of argv) {
+    const result = (argument || '').match(/--environment=([a-z0-9]+)/i);
     if (result && result[1]) {
       return result[1];
     }
