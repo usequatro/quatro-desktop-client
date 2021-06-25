@@ -33,9 +33,13 @@ const targetUrl =
     throw new Error('No targetUrl');
   })();
 
+const nameDetails = [`v${packageJson.version}`, environment !== 'production' ? environment : '']
+  .filter((s) => s !== '')
+  .join(', ');
+
 // @link https://github.com/nativefier/nativefier/blob/master/API.md#programmatic-api
 var options = {
-  name: `Quatro (v${packageJson.version})`,
+  name: `Quatro (${nameDetails})`,
   targetUrl,
   out: './build',
   platform,

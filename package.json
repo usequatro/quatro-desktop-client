@@ -1,6 +1,6 @@
 {
   "name": "quatro-desktop-client",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Desktop client app for the Quatro",
   "main": "index.js",
   "private": true,
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/usequatro/quatro-desktop-client#readme",
   "dependencies": {
-    "nativefier": "^44.0.2"
+    "nativefier": "^44.0.4"
   },
   "devDependencies": {
     "path": "^0.12.7",
