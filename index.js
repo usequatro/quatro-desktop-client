@@ -6,18 +6,14 @@ const allowedEnvironments = ['production', 'development', 'local'];
 
 const platform = getPlatform(process.argv);
 const environment = getEnvironment(process.argv);
-const defaultEnvironment = allowedEnvironments[0];
 
-if (!platform) {
-  throw new Error(`No platform specified. Use --platform=mac to specify`);
-}
-if (!allowedPlatforms.includes(platform)) {
+if (allowedPlatforms.includes(platform)) {
+  console.log(`➡ Using platform ${platform}`);
+} else {
   throw new Error(`Invalid platform value. Allowed values: ${allowedPlatforms.join(', ')}`);
 }
-if (!environment) {
-  console.log(`No environment defined. Using ${defaultEnvironment}`);
-} else if (allowedEnvironments.includes(environment)) {
-  console.log(`Using environment ${environment}`);
+if (allowedEnvironments.includes(environment)) {
+  console.log(`➡ Using environment ${environment}`);
 } else {
   throw new Error(`Invalid environment value. Allowed values: ${allowedEnvironments.join(', ')}`);
 }
@@ -31,7 +27,7 @@ const targetUrls = {
   [allowedEnvironments[2]]: 'http://localhost:3000',
 };
 const targetUrl =
-  targetUrls[environment || defaultEnvironment] ||
+  targetUrls[environment] ||
   (() => {
     throw new Error('No targetUrl');
   })();

@@ -9,7 +9,7 @@ The application is built with [Nativefier](https://github.com/nativefier/nativef
 Execute the `build` command passing the `--platform` and the `--environment` options. Example:
 
 ```bash
-npm run build --platform=mac --environment=production
+npm run build -- --platform=mac -- --environment=production
 ```
 
 Allowed environments: `production`, `development` and `local`.
