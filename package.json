@@ -1,6 +1,6 @@
 {
   "name": "quatro-desktop-client",
-  "version": "1.0.1",
+  "version": "0.1.1",
   "description": "Desktop client app for the Quatro",
   "main": "index.js",
   "private": true,
@@ -10,7 +10,7 @@
     "build-mac": "node ./index.js --platform=mac",
     "build-windows": "node ./index.js --platform=windows",
     "build-linux": "node ./index.js --platform=linux",
-    "build": "npm run build-injected-scripts && npm run build-mac"
+    "build": "npm run build-injected-scripts && node ./index.js "
   },
   "repository": {
     "type": "git",
