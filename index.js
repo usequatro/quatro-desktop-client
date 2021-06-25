@@ -1,4 +1,5 @@
 var nativefier = require('nativefier');
+var packageJson = require('./package.json');
 
 // @link https://github.com/nativefier/nativefier/blob/master/docs/api.md#platform
 const allowedPlatforms = ['mac', 'windows', 'linux'];
@@ -34,7 +35,7 @@ const targetUrl =
 
 // @link https://github.com/nativefier/nativefier/blob/master/API.md#programmatic-api
 var options = {
-  name: 'Quatro', // will be inferred if not specified
+  name: `Quatro (v${packageJson.version})`,
   targetUrl,
   out: './build',
   platform,
