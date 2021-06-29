@@ -16,6 +16,7 @@ const createWindowsInstaller = async () => {
       version,
       iconUrl: 'https://app.usequatro.com/favicon/favicon.ico',
       setupIcon: './assets/icon.ico',
+      loadingGif: './assets/logo-full.png',
       setupExe: `${baseName}-win32-x64.exe`,
     });
     console.log('Packaging for Windows done!');
