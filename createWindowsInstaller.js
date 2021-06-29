@@ -14,6 +14,7 @@ const createWindowsInstaller = async () => {
       noMsi: true,
       exe: `${baseName}.exe`,
       version,
+      iconUrl: 'https://app.usequatro.com/favicon/favicon.ico',
       setupIcon: './assets/icon.ico',
       setupExe: `${baseName}-win32-x64.exe`,
     });
