@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-injected-scripts": "webpack --config injected-scripts/webpack.config.js",
-    "build": "npm run build-injected-scripts && node ./index.js "
+    "build": "npm run build-injected-scripts && node ./index.js",
+    "dist-windows": "node ./createWindowsInstaller.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "nativefier": "^44.0.4"
   },
   "devDependencies": {
+    "electron-winstaller": "^5.0.0",
     "path": "^0.12.7",
     "prettier": "^2.3.1",
     "webpack": "^5.38.1",

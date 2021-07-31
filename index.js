@@ -39,7 +39,7 @@ const nameDetails = [`v${packageJson.version}`, environment !== 'production' ? e
 
 // @link https://github.com/nativefier/nativefier/blob/master/API.md#programmatic-api
 var options = {
-  name: `Quatro (${nameDetails})`,
+  name: `Quatro ${nameDetails}`,
   targetUrl,
   out: './build',
   platform,

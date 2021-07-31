@@ -1,6 +1,7 @@
 node_modules
 build
 SfxPackages
+dist
 
 .vscode
 .DS_Store

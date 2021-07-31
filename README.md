@@ -25,3 +25,11 @@ npm run build -- --platform=mac -- --environment=production
 Allowed platforms: `mac`, `linux` and `windows`.
 
 Allowed environments: `production`, `development` and `local`.
+
+## Creating Windows Installer
+
+A Windows executable can be created by running the `dist-windows` command, it uses [Electron Installer](https://github.com/electron/windows-installer) to package our electron build in a single `.exe` file.
+
+```bash
+npm run dist-windows
+```
