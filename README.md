@@ -4,6 +4,8 @@ A native desktop wrapper over Quatro - [https://usequatro.com](https://usequatro
 
 ## Unused
 
+[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+
 🟡 After exploring this approach, we decided not to use this repository and instead rely on ToDesktop.
 
 The Quatro desktop app is made with [ToDesktop](https://www.todesktop.com/). ToDesktop handles code signing and native installers, which is extremely convenient for us. Check it out!
