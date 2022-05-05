@@ -2,17 +2,17 @@
 
 A native desktop wrapper over Quatro - [https://usequatro.com](https://usequatro.com).
 
-## Note
+## Unused
 
-🟡 This package isn't how the Quatro desktop app is built at this time.
+🟡 After exploring this approach, we decided not to use this repository and instead rely on ToDesktop.
 
-The Quatro desktop app is built with [ToDesktop](https://www.todesktop.com/). ToDesktop handles code signing and native installers, which is extremely convenient for us. Check it out!
+The Quatro desktop app is made with [ToDesktop](https://www.todesktop.com/). ToDesktop handles code signing and native installers, which is extremely convenient for us. Check it out!
 
 <a href="https://www.todesktop.com/" target="_blank"><img src="https://www.todesktop.com/g/logo.png" alt="ToDesktop Logo" width="50"/></a>
 
 ## Implementation
 
-The desktop app is built with [Nativefier](https://github.com/nativefier/nativefier), a tool to create desktop apps by wrapping them with Electron in an OS executable.
+A desktop app is bundled with [Nativefier](https://github.com/nativefier/nativefier), a tool to create desktop apps by wrapping them with Electron in an OS executable.
 
 ## Building
 
